@@ -24,43 +24,43 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
     return (
         <>
             <Meta />
-            <div className={`${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex flex-col min-h-screen'}`}>
-                {/* <Alert preview={preview} /> */}
-                <main className={`${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex-1'} flex flex-col`}>
-                    <Head>
-                        <title>{pageTitle}</title>
-                        <link
-                            href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'
-                            rel='stylesheet'
-                        />
-                        {headChildren}
-                    </Head>
-                    {/* <div className='flex-1 flex flex-col'> */}
-                    <div className={`${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex-1 flex flex-row'}`}>
-                        {router.isFallback ? (
-                            <p>Loading…</p>
-                        ) : (
-                            <>
-                                <div
-                                    className={`${
-                                        mobileMenuVisible ? 'flex absolute left-0 inset-y-0' : 'hidden'
-                                    } md:flex`}
-                                >
-                                    <Sidebar />
-                                </div>
-                                <PageContent
-                                    title={pageTitle}
-                                    onMobileMenuToggle={toggleMobileMenu}
-                                    mobileMenuVisible={mobileMenuVisible}
-                                >
-                                    {children}
-                                </PageContent>
-                            </>
-                        )}
-                    </div>
-                    {/* </div> */}
-                </main>
-            </div>
+            {/* <div className={`${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex flex-col min-h-screen'}`}> */}
+            {/* <Alert preview={preview} /> */}
+            <main
+                className={`${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex-1 flex flex-col min-h-screen'} `}
+            >
+                <Head>
+                    <title>{pageTitle}</title>
+                    <link
+                        href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'
+                        rel='stylesheet'
+                    />
+                    {headChildren}
+                </Head>
+                {/* <div className='flex-1 flex flex-col'> */}
+                <div className={`${mobileMenuVisible ? '' : 'flex-1 flex flex-row'}`}>
+                    {router.isFallback ? (
+                        <p>Loading…</p>
+                    ) : (
+                        <>
+                            <div
+                                className={`${mobileMenuVisible ? 'flex absolute left-0 inset-y-0' : 'hidden'} md:flex`}
+                            >
+                                <Sidebar />
+                            </div>
+                            <PageContent
+                                title={pageTitle}
+                                onMobileMenuToggle={toggleMobileMenu}
+                                mobileMenuVisible={mobileMenuVisible}
+                            >
+                                {children}
+                            </PageContent>
+                        </>
+                    )}
+                </div>
+                {/* </div> */}
+            </main>
+            {/* </div> */}
             {/* <Footer /> */}
         </>
     )

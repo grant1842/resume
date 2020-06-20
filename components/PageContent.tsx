@@ -10,7 +10,7 @@ type Props = {
 
 const PageContent = ({ title, onMobileMenuToggle, mobileMenuVisible, children }: Props) => {
     return (
-        <div className={`flex-1 flex flex-col ${mobileMenuVisible ? 'h-screen overflow-hidden' : ''}`}>
+        <div className={'flex-1 flex flex-col'}>
             <Header title={title} onMobileMenuToggle={onMobileMenuToggle} mobileMenuVisible={mobileMenuVisible} />
             <div className={'flex-1 flex flex-col bg-gray-100'}>{children}</div>
         </div>
