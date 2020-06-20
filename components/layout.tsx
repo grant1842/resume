@@ -42,7 +42,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
                     </div>
                 </main>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

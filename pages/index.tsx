@@ -28,6 +28,16 @@ const Index = ({}: Props) => {
                                             Next.js
                                         </a>
                                     </span>
+                                    . The styling is done via{' '}
+                                    <span>
+                                        <a
+                                            href='https://tailwindcss.com'
+                                            target={'_blank'}
+                                            className={'text-orange-500'}
+                                        >
+                                            Tailwind CSS
+                                        </a>
+                                    </span>
                                 </p>
 
                                 <p className={'text-gray-900'}>
