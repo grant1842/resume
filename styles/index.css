@@ -5,15 +5,18 @@ body {
 }
 h1 {
     @apply text-3xl;
+    @apply font-sans;
 }
 h2 {
     @apply text-2xl;
+    @apply font-sans;
 }
 h3 {
     @apply text-xl;
+    @apply font-sans;
 }
 p {
-    @apply mb-4;
+    @apply mb-5;
 }
 
 /* Write your own custom base styles here */
