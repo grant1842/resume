@@ -8,6 +8,8 @@ module.exports = {
             colors: {
                 'blue-primary': '#36AAFC',
                 'gray-primary': '#212121',
+                'peach-primary': '#F7643C',
+                'light-gray-primary': '#E6E7EA',
                 success: '#0070f3',
                 cyan: '#79FFE1',
             },

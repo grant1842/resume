@@ -1,11 +1,12 @@
 import { ReactNode } from 'react'
 
 type Props = {
+    className?: string
     children?: ReactNode
 }
 
-const Card = ({ children }: Props) => {
-    return <div className={'bg-white rounded-md shadow-md p-4 mb-4'}>{children}</div>
+const Card = ({ className = '', children }: Props) => {
+    return <div className={`bg-white rounded-md shadow-md ${className}`}>{children}</div>
 }
 
 export default Card

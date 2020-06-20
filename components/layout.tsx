@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Sidebar from './sidebar/Sidebar'
 import PageContent from './PageContent'
 import { useRouter } from 'next/router'
+import { useState, MouseEvent } from 'react'
 
 type Props = {
     children?: React.ReactNode
@@ -13,6 +14,12 @@ type Props = {
 
 const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resume' }: Props) => {
     const router = useRouter()
+
+    const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
+
+    const toggleMobileMenu = (e: MouseEvent) => {
+        setMobileMenuVisible(!mobileMenuVisible)
+    }
 
     return (
         <>
@@ -29,13 +36,25 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
                         {headChildren}
                     </Head>
                     <div className='flex-1 flex flex-col'>
-                        <div className='flex-1 flex flex-col md:flex-row'>
+                        <div className={`flex-1 flex flex-row`}>
                             {router.isFallback ? (
                                 <p>Loading…</p>
                             ) : (
                                 <>
-                                    <Sidebar />
-                                    <PageContent title={pageTitle}>{children}</PageContent>
+                                    <div
+                                        className={`${
+                                            mobileMenuVisible ? 'flex absolute inset-y-0' : 'hidden'
+                                        } md:flex md:relative`}
+                                    >
+                                        <Sidebar />
+                                    </div>
+                                    <PageContent
+                                        title={pageTitle}
+                                        onMobileMenuToggle={toggleMobileMenu}
+                                        mobileMenuVisible={mobileMenuVisible}
+                                    >
+                                        {children}
+                                    </PageContent>
                                 </>
                             )}
                         </div>

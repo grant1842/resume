@@ -2,8 +2,10 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Card from '../components/Card'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faMobile, faDesktop } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe, faMobile, faDesktop, faFolder, faIdCard } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+import HomeFeatureCard from '../components/pages/home/HomeFeatureCard'
 
 type Props = {}
 
@@ -18,7 +20,7 @@ const Index = ({}: Props) => {
                         <p>Loading…</p>
                     ) : (
                         <>
-                            <div className={'mb-6'}>
+                            <div className={'mb-8'}>
                                 <h2 className={'text-gray-900'}>Welcome</h2>
                                 <p className={'text-gray-900'}>
                                     I created this website to represent my resume. It is built using React and
@@ -62,42 +64,23 @@ const Index = ({}: Props) => {
                                 </p>
                             </div>
 
-                            <div className={'mb-2'}>
+                            <div className={'text-center sm:text-left mb-2'}>
                                 <p className={'mb-0'}>You can browse my skills here:</p>
                             </div>
 
-                            <div className='md:grid md:grid-cols-3 md:col-gap-6 mb-6'>
-                                <div className='flex-1'>
-                                    <Card>
-                                        <p>
-                                            <FontAwesomeIcon icon={faGlobe} /> Web
-                                        </p>
-                                    </Card>
-                                </div>
-                                <div className='flex-1'>
-                                    <Card>
-                                        <p>
-                                            <FontAwesomeIcon icon={faMobile} /> Mobile
-                                        </p>
-                                    </Card>
-                                </div>
-                                <div className='flex-1'>
-                                    <Card>
-                                        <p>
-                                            <FontAwesomeIcon icon={faDesktop} /> Desktop
-                                        </p>
-                                    </Card>
-                                </div>
+                            <div className='flex flex-col sm:grid sm:grid-cols-3 sm:col-gap-6 mb-6'>
+                                <HomeFeatureCard icon={faGlobe} text={'Web'} link={'/skills/web'} />
+                                <HomeFeatureCard icon={faDesktop} text={'Desktop'} link={'/skills/desktop'} />
+                                <HomeFeatureCard icon={faMobile} text={'Mobile'} link={'/skills/mobile'} />
                             </div>
 
-                            <div className={'mb-2'}>
-                                <p className={'mb-0'}>Check out my projects:</p>
+                            <div className={'text-center sm:text-left mb-2'}>
+                                <p className={'mb-0'}>You can also:</p>
                             </div>
 
-                            <div className={'mb-6'}>
-                                <Card>
-                                    <p>Projects</p>
-                                </Card>
+                            <div className={'md:grid md:grid-cols-2 md:col-gap-6 mb-6'}>
+                                <HomeFeatureCard icon={faFolder} text={'View My Projects'} link={'/projects'} />
+                                <HomeFeatureCard icon={faIdCard} text={'Contact Me'} link={'/contact'} />
                             </div>
                         </>
                     )}
