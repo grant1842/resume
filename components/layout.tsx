@@ -26,7 +26,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
             <Meta />
             <div className={`flex flex-col ${mobileMenuVisible ? ' h-screen overflow-hidden' : 'min-h-screen'}`}>
                 {/* <Alert preview={preview} /> */}
-                <main className={'flex-1 flex flex-col'}>
+                <main className={`${mobileMenuVisible ? '' : 'flex-1'} flex flex-col`}>
                     <Head>
                         <title>{pageTitle}</title>
                         <link
