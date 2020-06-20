@@ -24,7 +24,11 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
     return (
         <>
             <Meta />
-            <div className='flex flex-col min-h-screen'>
+            <div
+                className={`flex flex-col ${
+                    mobileMenuVisible ? 'h-screen overflow-hidden' : 'min-h-screen'
+                } md:overflow-auto`}
+            >
                 {/* <Alert preview={preview} /> */}
                 <main className={'flex-1 flex flex-col'}>
                     <Head>
