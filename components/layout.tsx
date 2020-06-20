@@ -24,7 +24,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
     return (
         <>
             <Meta />
-            <div className={`flex flex-col h-screen ${mobileMenuVisible ? 'overflow-hidden' : ''}`}>
+            <div className={`flex flex-col min-h-screen ${mobileMenuVisible ? 'overflow-hidden' : ''}`}>
                 {/* <Alert preview={preview} /> */}
                 <main className={'flex-1 flex flex-col'}>
                     <Head>
@@ -35,30 +35,30 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
                         />
                         {headChildren}
                     </Head>
-                    <div className='flex-1 flex flex-col'>
-                        <div className={`flex-1 flex flex-row ${mobileMenuVisible ? 'h-screen overflow-hidden' : ''}`}>
-                            {router.isFallback ? (
-                                <p>Loading…</p>
-                            ) : (
-                                <>
-                                    <div
-                                        className={`${
-                                            mobileMenuVisible ? 'flex absolute left-0 inset-y-0' : 'hidden'
-                                        } md:flex md:relative`}
-                                    >
-                                        <Sidebar />
-                                    </div>
-                                    <PageContent
-                                        title={pageTitle}
-                                        onMobileMenuToggle={toggleMobileMenu}
-                                        mobileMenuVisible={mobileMenuVisible}
-                                    >
-                                        {children}
-                                    </PageContent>
-                                </>
-                            )}
-                        </div>
+                    {/* <div className='flex-1 flex flex-col'> */}
+                    <div className={`flex flex-row ${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex-1 '}`}>
+                        {router.isFallback ? (
+                            <p>Loading…</p>
+                        ) : (
+                            <>
+                                <div
+                                    className={`${
+                                        mobileMenuVisible ? 'flex absolute left-0 inset-y-0' : 'hidden'
+                                    } md:flex md:relative`}
+                                >
+                                    <Sidebar />
+                                </div>
+                                <PageContent
+                                    title={pageTitle}
+                                    onMobileMenuToggle={toggleMobileMenu}
+                                    mobileMenuVisible={mobileMenuVisible}
+                                >
+                                    {children}
+                                </PageContent>
+                            </>
+                        )}
                     </div>
+                    {/* </div> */}
                 </main>
             </div>
             {/* <Footer /> */}
