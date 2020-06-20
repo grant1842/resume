@@ -29,7 +29,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
                         {headChildren}
                     </Head>
                     <div className='flex-1 flex flex-col'>
-                        <div className='flex-1 flex'>
+                        <div className='flex-1 flex flex-col md:flex-row'>
                             {router.isFallback ? (
                                 <p>Loading…</p>
                             ) : (
