@@ -36,7 +36,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
                         {headChildren}
                     </Head>
                     {/* <div className='flex-1 flex flex-col'> */}
-                    <div className={`${mobileMenuVisible ? '' : 'flex-1 flex flex-row'}`}>
+                    <div className={`${mobileMenuVisible ? 'relative' : 'flex-1 flex flex-row'}`}>
                         {router.isFallback ? (
                             <p>Loading…</p>
                         ) : (
