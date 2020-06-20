@@ -24,7 +24,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
     return (
         <>
             <Meta />
-            <div className={`flex flex-col ${mobileMenuVisible ? 'overflow-hidden' : 'min-h-screen'}`}>
+            <div className={`${mobileMenuVisible ? 'h-screen overflow-hidden' : 'flex flex-col min-h-screen'}`}>
                 {/* <Alert preview={preview} /> */}
                 <main className={`${mobileMenuVisible ? '' : 'flex-1'} flex flex-col`}>
                     <Head>
@@ -36,11 +36,7 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
                         {headChildren}
                     </Head>
                     {/* <div className='flex-1 flex flex-col'> */}
-                    <div
-                        className={`${
-                            mobileMenuVisible ? 'relative h-screen overflow-hidden' : 'flex-1 flex flex-row'
-                        }`}
-                    >
+                    <div className={`${mobileMenuVisible ? '' : 'flex-1 flex flex-row'}`}>
                         {router.isFallback ? (
                             <p>Loading…</p>
                         ) : (
