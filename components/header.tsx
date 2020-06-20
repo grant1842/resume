@@ -11,7 +11,7 @@ type Props = {
 
 const Header = ({ title, onMobileMenuToggle }: Props) => {
     return (
-        <div className={`bg-blue-primary flex items-center`}>
+        <div className={`bg-gray-primary md:bg-blue-primary flex items-center`}>
             <header className={`flex-1 flex flex-col md:flex-row items-between py-4 mx-6`}>
                 <Link href='/'>
                     <a className={'text-white'}>
