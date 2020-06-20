@@ -6,7 +6,7 @@ type Props = {}
 
 const Sidebar = ({}: Props) => {
     return (
-        <nav className='flex flex-col items-start bg-gray-primary shadow-2xl font-light text-white px-6 py-4'>
+        <nav className='flex-1 flex flex-col items-start bg-gray-primary shadow-2xl font-light text-white px-6 py-4'>
             <SidebarSection>
                 <Avatar name={'Grant Fullen'} picture={'/assets/profile-picture.jpg'} />
             </SidebarSection>
