@@ -1,10 +1,7 @@
 import Container from '../components/container'
 import Layout from '../components/layout'
-import Card from '../components/Card'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe, faMobile, faDesktop, faFolder, faIdCard } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import HomeFeatureCard from '../components/pages/home/HomeFeatureCard'
 
 type Props = {}
@@ -14,23 +11,22 @@ const Index = ({}: Props) => {
 
     return (
         <>
-            <Layout pageTitle={'Dashboard'}>
+            <Layout headerTitle={'Dashboard'}>
                 <Container>
                     {router.isFallback ? (
                         <p>Loading…</p>
                     ) : (
                         <>
                             <div className={'mb-8'}>
-                                <h2 className={'text-gray-900'}>Welcome</h2>
+                                <h2 className={'text-gray-900'}>Welcome to My Portfolio</h2>
                                 <p className={'text-gray-900'}>
-                                    I created this website to represent my resume. It is built using React and
-                                    server-side rendering, via{' '}
+                                    I built this website using React. It is served by server-side rendering via{' '}
                                     <span>
                                         <a href='https://nextjs.org' target={'_blank'} className={'text-orange-500'}>
                                             Next.js
                                         </a>
                                     </span>
-                                    . The styling is done via{' '}
+                                    . The styling is applied using{' '}
                                     <span>
                                         <a
                                             href='https://tailwindcss.com'
@@ -46,7 +42,7 @@ const Index = ({}: Props) => {
                                     This site is hosted at{' '}
                                     <span>
                                         <a href='https://vercel.com' target={'_blank'} className={'text-orange-500'}>
-                                            Vercel.com
+                                            Vercel
                                         </a>
                                     </span>
                                     , and is updated when I pull the updated code into the master branch on my GitHub

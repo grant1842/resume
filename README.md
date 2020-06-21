@@ -1,4 +1,4 @@
-# A statically generated resume using Next.js, Tailwind CSS, and TypeScript
+# A statically generated portfolio using Next.js, Tailwind CSS, and TypeScript
 
 ## How to use
 

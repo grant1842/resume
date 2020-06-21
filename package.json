@@ -1,5 +1,5 @@
 {
-    "name": "grantfullen-resume-nextjs-typescript",
+    "name": "grantfullen-portfolio-nextjs-typescript",
     "version": "1.0.0",
     "scripts": {
         "dev": "next",

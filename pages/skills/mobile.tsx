@@ -7,7 +7,7 @@ const Mobile = () => {
     const router = useRouter()
 
     return (
-        <Layout pageTitle={'Mobile Skills'}>
+        <Layout headerTitle={'Mobile Skills'}>
             <Container>
                 {router.isFallback ? (
                     <p>Loading…</p>

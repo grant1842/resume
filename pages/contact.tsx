@@ -7,7 +7,7 @@ const Contact = () => {
     const router = useRouter()
 
     return (
-        <Layout pageTitle={'Contact Me'}>
+        <Layout headerTitle={'Contact Me'}>
             <Container>
                 {router.isFallback ? (
                     <h3>Loading…</h3>

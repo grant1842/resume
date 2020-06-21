@@ -7,7 +7,7 @@ const Projects = () => {
     const router = useRouter()
 
     return (
-        <Layout pageTitle={'Projects'}>
+        <Layout headerTitle={'Projects'}>
             <Container>
                 {router.isFallback ? (
                     <h3>Loading…</h3>

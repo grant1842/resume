@@ -7,7 +7,7 @@ const Desktop = () => {
     const router = useRouter()
 
     return (
-        <Layout pageTitle={'Desktop Skills'}>
+        <Layout headerTitle={'Desktop Skills'}>
             <Container>
                 {router.isFallback ? (
                     <p>Loading…</p>

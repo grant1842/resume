@@ -10,7 +10,7 @@ const Sidebar = ({ mobileMenuVisible }: Props) => {
     return (
         <nav
             className={`${
-                mobileMenuVisible ? 'absolute h-screen overflow-hidden' : 'hidden md:flex flex-col'
+                mobileMenuVisible ? 'absolute h-screen' : 'hidden md:flex flex-col'
             } items-start bg-gray-primary shadow-2xl font-light text-white px-6 py-4`}
         >
             <SidebarSection>

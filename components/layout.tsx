@@ -8,11 +8,11 @@ import { useState, MouseEvent } from 'react'
 
 type Props = {
     children?: React.ReactNode
-    pageTitle?: string
+    headerTitle?: string
     headChildren?: React.ReactNode
 }
 
-const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resume' }: Props) => {
+const Layout = ({ children, headChildren, headerTitle = 'Grant Fullen - React Portfolio' }: Props) => {
     const router = useRouter()
 
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
@@ -24,40 +24,22 @@ const Layout = ({ children, headChildren, pageTitle = 'Grant Fullen - React Resu
     return (
         <>
             <Meta />
-            <main className={`flex-1 flex flex-col ${mobileMenuVisible ? 'h-screen' : 'min-h-screen'}`}>
-                {/* <main className={`${mobileMenuVisible ? 'flex flex-col' : 'flex-1 flex flex-col min-h-screen'} `}> */}
+            <main className={`flex-1 flex flex-col ${mobileMenuVisible ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
                 <Head>
-                    <title>{pageTitle}</title>
+                    <title>Grant Fullen - Portfolio</title>
                     <link
                         href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'
                         rel='stylesheet'
                     />
                     {headChildren}
                 </Head>
-                {/* <div className='flex-1 flex flex-col'> */}
-                <div
-                    className={`flex-1 flex flex-row relative ${mobileMenuVisible ? 'h-screen' : ''}`}
-                    // className={`${
-                    //     mobileMenuVisible ? 'relative flex flex-col h-screen' : 'flex-1 flex flex-row'
-                    // }`}
-                >
+                <div className={`flex-1 flex flex-row relative ${mobileMenuVisible ? 'h-screen' : ''}`}>
                     {router.isFallback ? (
                         <p>Loading…</p>
                     ) : (
                         <>
-                            {/* <div
-                                className={`flex flex-col ${mobileMenuVisible ? 'absolute left-0 h-screen' : 'hidden'}`}
-                                // className={`${
-                                //     mobileMenuVisible ? 'flex flex-col absolute left-0 inset-y-0' : 'hidden'
-                                // } `}
-                            > */}
                             <Sidebar mobileMenuVisible={mobileMenuVisible} />
-                            {/* </div> */}
-                            <PageContent
-                                title={pageTitle}
-                                onMobileMenuToggle={toggleMobileMenu}
-                                mobileMenuVisible={mobileMenuVisible}
-                            >
+                            <PageContent title={headerTitle} onMobileMenuToggle={toggleMobileMenu}>
                                 {children}
                             </PageContent>
                         </>
