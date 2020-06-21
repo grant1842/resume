@@ -6,7 +6,6 @@ import { MouseEvent } from 'react'
 type Props = {
     title: string
     onMobileMenuToggle: (e: MouseEvent) => void
-    mobileMenuVisible: boolean
 }
 
 const Header = ({ title, onMobileMenuToggle }: Props) => {

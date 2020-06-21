@@ -2,11 +2,17 @@ import SidebarItem from './components/SidebarItem'
 import SidebarSection from './components/SidebarSection'
 import Avatar from '../avatar'
 
-type Props = {}
+type Props = {
+    mobileMenuVisible: boolean
+}
 
-const Sidebar = ({}: Props) => {
+const Sidebar = ({ mobileMenuVisible }: Props) => {
     return (
-        <nav className='flex-1 flex flex-col items-start bg-gray-primary shadow-2xl font-light text-white px-6 py-4'>
+        <nav
+            className={`${
+                mobileMenuVisible ? 'absolute h-screen overflow-hidden' : 'hidden flex flex-col'
+            } items-start bg-gray-primary shadow-2xl font-light text-white px-6 py-4`}
+        >
             <SidebarSection>
                 <Avatar name={'Grant Fullen'} picture={'/assets/profile-picture.jpg'} />
             </SidebarSection>

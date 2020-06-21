@@ -5,7 +5,7 @@ type Props = {
 }
 
 const Container = ({ children }: Props) => {
-    return <div className={'flex-1 p-8'}>{children}</div>
+    return <div className={'flex-1 p-8 overflow-hidden'}>{children}</div>
 }
 
 export default Container
