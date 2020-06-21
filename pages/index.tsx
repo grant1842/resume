@@ -68,7 +68,7 @@ const Index = ({}: Props) => {
                                 <p className={'mb-0'}>You can browse my skills here:</p>
                             </div>
 
-                            <div className='flex flex-col sm:grid sm:grid-cols-3 sm:col-gap-6 mb-6'>
+                            <div className='sm:grid sm:grid-cols-3 sm:col-gap-6 mb-6'>
                                 <HomeFeatureCard icon={faGlobe} text={'Web'} link={'/skills/web'} />
                                 <HomeFeatureCard icon={faDesktop} text={'Desktop'} link={'/skills/desktop'} />
                                 <HomeFeatureCard icon={faMobile} text={'Mobile'} link={'/skills/mobile'} />
@@ -78,7 +78,7 @@ const Index = ({}: Props) => {
                                 <p className={'mb-0'}>You can also:</p>
                             </div>
 
-                            <div className={'md:grid md:grid-cols-2 md:col-gap-6 mb-6'}>
+                            <div className={'sm:grid sm:grid-cols-2 sm:col-gap-6 mb-6'}>
                                 <HomeFeatureCard icon={faFolder} text={'View My Projects'} link={'/projects'} />
                                 <HomeFeatureCard icon={faIdCard} text={'Contact Me'} link={'/contact'} />
                             </div>

@@ -10,7 +10,7 @@ const Sidebar = ({ mobileMenuVisible }: Props) => {
     return (
         <nav
             className={`${
-                mobileMenuVisible ? 'absolute h-screen overflow-hidden' : 'hidden flex flex-col'
+                mobileMenuVisible ? 'absolute h-screen overflow-hidden' : 'hidden md:flex flex-col'
             } items-start bg-gray-primary shadow-2xl font-light text-white px-6 py-4`}
         >
             <SidebarSection>
@@ -24,8 +24,10 @@ const Sidebar = ({ mobileMenuVisible }: Props) => {
                 <SidebarItem url={'/skills/mobile'} text={'Mobile'} />
                 <SidebarItem url={'/skills/desktop'} text={'Desktop'} />
             </SidebarSection>
-            <SidebarItem url={'/projects'} text={'Projects'} />
-            <SidebarItem url={'/contact'} text={'Contact Me'} />
+            <SidebarSection>
+                <SidebarItem url={'/projects'} text={'Projects'} />
+                <SidebarItem url={'/contact'} text={'Contact Me'} />
+            </SidebarSection>
         </nav>
     )
 }
