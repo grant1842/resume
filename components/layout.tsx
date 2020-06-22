@@ -3,7 +3,7 @@ import Meta from './meta'
 import Head from 'next/head'
 import Sidebar from './sidebar/Sidebar'
 import PageContent from './PageContent'
-import { useRouter } from 'next/router'
+import { useRouter, NextRouter } from 'next/router'
 import { useState, MouseEvent } from 'react'
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 }
 
 const Layout = ({ children, headChildren, headerTitle = 'Grant Fullen - React Portfolio' }: Props) => {
-    const router = useRouter()
+    const router: NextRouter = useRouter()
 
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
 

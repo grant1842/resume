@@ -22,7 +22,7 @@ const HomeFeatureCard = ({ icon, text, link }: Props) => {
                                     <FontAwesomeIcon size={'3x'} icon={icon} />
                                 </div>
                                 <div>
-                                    <p className={'mb-0'}>{text}</p>
+                                    <p className={'text-gray-900 font-medium mb-0'}>{text}</p>
                                 </div>
                             </div>
                         </a>

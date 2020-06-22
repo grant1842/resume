@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router'
+import { useRouter, NextRouter } from 'next/router'
 import Layout from '../components/layout'
 
 import Container from '../components/container'
 
 const Contact = () => {
-    const router = useRouter()
+    const router: NextRouter = useRouter()
 
     return (
         <Layout headerTitle={'Contact Me'}>

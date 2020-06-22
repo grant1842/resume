@@ -1,20 +1,20 @@
-import { useRouter } from 'next/router'
+import { useRouter, NextRouter } from 'next/router'
 import Layout from '../../components/layout'
 
 import Container from '../../components/container'
 
-const Desktop = () => {
-    const router = useRouter()
+const SkillsIndex = () => {
+    const router: NextRouter = useRouter()
 
     return (
-        <Layout headerTitle={'Desktop Skills'}>
+        <Layout headerTitle={'Skills'}>
             <Container>
                 {router.isFallback ? (
                     <p>Loading…</p>
                 ) : (
                     <>
                         <div>
-                            <p>skills - desktop</p>
+                            <p>skills page</p>
                         </div>
                     </>
                 )}
@@ -23,4 +23,4 @@ const Desktop = () => {
     )
 }
 
-export default Desktop
+export default SkillsIndex

@@ -3,12 +3,19 @@ import Link from 'next/link'
 type Props = {
     url: string
     text: string
+    active: boolean
 }
 
-const SidebarItem = ({ url, text }: Props) => {
+const SidebarItem = ({ url, text, active }: Props) => {
     return (
         <Link href={url}>
-            <a className={'text-lg hover:bg-white hover:rounded-lg hover:text-blue-primary px-2 py-1'}>{text}</a>
+            <a
+                className={`font-normal text-lg hover:bg-white hover:rounded-lg border-blue-primary hover:text-blue-primary my-1 px-2 ${
+                    active ? 'border-l-2' : ''
+                }`}
+            >
+                {text}
+            </a>
         </Link>
     )
 }

@@ -1,12 +1,17 @@
 import SidebarItem from './components/SidebarItem'
 import SidebarSection from './components/SidebarSection'
 import Avatar from '../avatar'
+import { NextRouter, useRouter } from 'next/router'
 
 type Props = {
     mobileMenuVisible: boolean
 }
 
 const Sidebar = ({ mobileMenuVisible }: Props) => {
+    const router: NextRouter = useRouter()
+    const route: string = router.route
+    console.log('Sidebar -> route', route)
+
     return (
         <nav
             className={`${
@@ -17,16 +22,10 @@ const Sidebar = ({ mobileMenuVisible }: Props) => {
                 <Avatar name={'Grant Fullen'} picture={'/assets/profile-picture.jpg'} />
             </SidebarSection>
             <SidebarSection>
-                <SidebarItem url={'/'} text={'Dashboard'} />
-            </SidebarSection>
-            <SidebarSection title={'Skills'}>
-                <SidebarItem url={'/skills/web'} text={'Web'} />
-                <SidebarItem url={'/skills/mobile'} text={'Mobile'} />
-                <SidebarItem url={'/skills/desktop'} text={'Desktop'} />
-            </SidebarSection>
-            <SidebarSection>
-                <SidebarItem url={'/projects'} text={'Projects'} />
-                <SidebarItem url={'/contact'} text={'Contact Me'} />
+                <SidebarItem url={'/'} text={'Home'} active={route === '/'} />
+                <SidebarItem url={'/skills'} text={'Skills'} active={route === '/skills'} />
+                <SidebarItem url={'/projects'} text={'Projects'} active={route === '/projects'} />
+                <SidebarItem url={'/contact'} text={'Contact Me'} active={route === '/contact'} />
             </SidebarSection>
         </nav>
     )

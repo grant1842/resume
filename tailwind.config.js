@@ -4,9 +4,10 @@ module.exports = {
         extend: {
             fontFamily: {
                 roboto: ['Roboto', 'sans-serif'],
+                lato: ['Lato', 'sans-serif'],
             },
             colors: {
-                'blue-primary': '#36AAFC',
+                'blue-primary': '#0094ff',
                 'gray-primary': '#212121',
                 'peach-primary': '#F7643C',
                 'light-gray-primary': '#E6E7EA',
